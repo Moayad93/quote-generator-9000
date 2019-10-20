@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400italic');
+
+html {
+  font: 16px/23px Arial, sans-serif;
+}
+
+body {
+  color: #212121;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header,
+section,
+footer {
+  padding: 2em;
+}
+
+header,
+footer {
+  flex: 0 0 auto;
+  background-color: #263238;
+  color: #FAFAFA;
+  text-align: center;
+}
+
+
+section:first-child {
+  background-color: rgba(0, 0, 0, 0.37);
+}
+
+section:last-child {
+  background-color: #CFD8DC;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+#choicesSection div {
+  width: 100%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+input[type="radio"]+span {
+  display: inline-block;
+  padding: 0.25em 1em;
+  color: #FAFAFA;
+  font-size: 0.70rem;
+  background-color: #ffb042b4;
+  box-shadow: 0 5px 0 0 #cc8d35b6;
+  transition: all 0.2s ease;
+  margin: 1em auto;
+  /* width: 1%; */
+}
+
+input[type="radio"]+span:hover {
+  background-color: #ffb855af;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked+span {
+  background-color: #ffb855af;
+  top: 5px;
+  box-shadow: none;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+button {
+  width: 37%;
+  margin: 0 auto;
+  font-size: 0.75rem;
+  text-align: center;
+  background-color: #ffb142;
+  box-shadow: 0 5px 0 0 #cc8e35;
+}
+
+button:hover {
+  background-color: #ffb855;
+}
+
+blockquote {
+  font-size: 1.4rem;
+  font-weight: 1;
+  width: 100%;
+  margin: 50px auto;
+  font-style: italic;
+  color: #212121;
+  padding: 1em 1em 1em 3.5em;
+  border-left: 8px solid #ffb142;
+  background: #ECEFF1;
+  /* Golden Ratio */
+  max-width: 433px;
+}
+
+blockquote::before {
+  font-family: Arial, Helvetica, sans-serif;
+  content: "\201C";
+  color: #cc8e35;
+  font-size: 4em;
+  position: absolute;
+  left: 10px;
+  top: 40px;
+}
+
+blockquote::after {
+  content: '';
+}
+
+blockquote span {
+  display: block;
+  color: #333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+blockquote span::before {
+  content: '— ';
+}
+
+#container {
+  width: 100%;
+  height: 100vh;
+}
+
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+section.column:first-child {
+  flex-basis: 25%;
+}
+
+section.column:last-child {
+  flex-basis: 75%;
+}
+
+@media only screen and (max-width: 900px) {
+
+  section.column:first-child {
+    flex-basis: 100%;
+  }
+
+  section.column:last-child {
+    flex-basis: 100%;
+  }
+}

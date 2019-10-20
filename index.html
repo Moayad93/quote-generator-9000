@@ -1,95 +1,67 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Quote Generator 9000</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" media="screen" href="css/index.css">
-</head>
-<body class="bg-dark">
-  <div class="container-fluid bg-secondary p-0">
-    <div class="row no-gutters">
-      <div class="col-md col-sm-12">
-        <div class="jumbotron bg-transparent pb-1">
-          <div class="container">
-            <h1 class="display-4">Quote Generator 9000</h1>
-            <p class="lead">powered by Quotenator</p>
-            <hr class="my-4">
+<html lang="en">
 
-            <div class="row">
-              <div class="col-sm-12 col-md-6">
-                <p class="lead">What type of Quotes are you looking for?</p>
-                <div class="btn-group btn-group-toggle btn-block" data-toggle="buttons">
-                  <label class="btn btn-info btn-lg active">
-                    <input type="radio" name="optionTypeOfQuotes" value="inspiration" id="optionInspirationQuotes" autocomplete="off" checked> Inspiration
-                  </label>
-                  <label class="btn btn-info btn-lg">
-                    <input type="radio" name="optionTypeOfQuotes" value="knowledge" id="optionKnowledgeQuotes" autocomplete="off"> Knowledge
-                  </label>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-6">
-                <p class="lead">How many Quotes would you like?</p>
-                <div class="btn-group btn-group-toggle btn-block" data-toggle="buttons">
-                    <label class="btn btn-light btn-lg active">
-                      <input type="radio" name="optionNumberOfQuotes" value="1" id="optionNumberOfQuotesOne" autocomplete="off" checked> 1
-                    </label>
-                    <label class="btn btn-light btn-lg">
-                      <input type="radio" name="optionNumberOfQuotes" value="2" id="optionNumberOfQuotesTwo" autocomplete="off"> 2
-                    </label>
-                    <label class="btn btn-light btn-lg">
-                      <input type="radio" name="optionNumberOfQuotes" value="3" id="optionNumberOfQuotesThree" autocomplete="off"> 3
-                    </label>
-                    <label class="btn btn-light btn-lg">
-                      <input type="radio" name="optionNumberOfQuotes" value="4" id="optionNumberOfQuotesFour" autocomplete="off"> 4
-                    </label>
-                    <label class="btn btn-light btn-lg">
-                      <input type="radio" name="optionNumberOfQuotes" value="5" id="optionNumberOfQuotesFive" autocomplete="off"> 5
-                    </label>
-                  </div>
-              </div>
-            </div>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-            <div class="row">
-              <div class="col-md-4 offset-md-4">
-                <a id="generateQuote" href="#" class="btn btn-warning btn-lg btn-block py-3 mt-5">Generate Quotes</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/moayad-style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 
-  <div class="container quotes-list-container">
-    <div class="row">
-        <div class="col">
-          <h3 class="display-4 mt-4">Quotes</h3>
-          <hr class="my-4" />
-        </div>
-    </div>
+    <title>Quote Generator</title>
+  </head>
 
-    <div class="quotes-list"></div>
+  <body>
 
-    <!-- Our HTML template for the quote blocks. -->
-    <template id="quote-block-template">
+    <div id="container">
+
       <div class="row">
-        <div class="col">
-          <blockquote class="blockquote bg-info">
-            <p class="mb-0 quote">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          </blockquote>
-        </div>
+        <header class="column">
+          <h1>Quote Generator</h1>
+        </header>
       </div>
-    </template>
 
-  </div>
+      <div class="row">
+        <main class="row">
+          <section id="choicesSection" class="column">
+            <p>How many quotes would you like to generate?</p>
+            <div>
+              <label>
+                <input type="radio" name="quotesAmount" id="choiceInput1" value="1"><span>1</span>
+              </label>
+              <label>
+                <input type="radio" name="quotesAmount" id="choiceInput2" value="2"><span>2</span>
+              </label>
+              <label>
+                <input type="radio" name="quotesAmount" id="choiceInput3" value="3"><span>3</span>
+              </label>
+              <label>
+                <input type="radio" name="quotesAmount" id="choiceInput4" value="4"><span>4</span>
+              </label>
+              <label>
+                <input type="radio" name="quotesAmount" id="choiceInput5" value="5"><span>5</span>
+              </label>
+            </div>
+            <button id="generateButton">Generate Quotes</button>
+          </section>
+          <section id="quotesSection" class="column">
+          </section>
+        </main>
+      </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
-  <script src="js/index.js"></script>
-</body>
+      <div class="row">
+        <footer class="column">
+          <p>© 2019 Moayad Alnuwaysir with <span>&hearts;</span>. All Rights Reserved.</p>
+        </footer>
+      </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+
 </html>
